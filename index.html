@@ -3,20 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI QR Payment</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+    <title>UPI Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>UPI QR Payment</h1>
-        
-        <!-- QR Code image -->
-        <img src="your-upi-qr-code-url" alt="UPI QR Code" class="qr-code">
-        
-        <!-- Pay Now button -->
-        <button id="payButton">Pay Now</button>
+        <h1>UPI Payment</h1>
+        <!-- Replace with your actual UPI QR code or remove if not needed -->
+        <!-- <img src="path-to-your-upi-qr-code.png" alt="UPI QR Code"> -->
+        <p>Click the button below to pay now:</p>
+        <button onclick="payNow()">Pay Now</button>
     </div>
 
-    <script src="script.js"></script> <!-- Optional: Link to JavaScript file -->
+    <script>
+        function payNow() {
+            const upiId = 'Pumptripathi@okaxis'; // Replace with your UPI ID
+            const amount = '100'; // Replace with your transaction amount
+            const note = 'Payment for goods'; // Replace with your transaction note
+            const name = 'Your Name'; // Replace with your name
+            const currency = 'INR'; // Replace with your currency code (e.g., INR)
+
+            const paymentUrl = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(name)}&am=${encodeURIComponent(amount)}&tn=${encodeURIComponent(note)}&cu=${encodeURIComponent(currency)}`;
+
+            // Redirect to UPI payment app
+            window.location.href = paymentUrl;
+        }
+    </script>
 </body>
 </html>
