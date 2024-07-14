@@ -1,24 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI Payment</title>
+    <title>भुगतान करें</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            background-color: #f5f5f5;
         }
         .container {
             max-width: 400px;
             margin: 0 auto;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border: 1px solid #ccc;
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .btn-pay {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .btn-pay:hover {
+            background-color: #45a049;
+        }
+        .payment-instructions {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>भुगतान करें</h1>
+        <!-- Replace with your actual UPI QR code or remove if not needed -->
+        <!-- <img src="path-to-your-upi-qr-code.png" alt="UPI QR Code"> -->
+        <p>अपना भुगतान करें और पेमेंट ऐप्प चुनें:</p>
+        <button class="btn-pay" onclick="payNow()">Pay Now</button>
+        <div class="payment-instructions">
+            <p>भुगतान करने के लिए "Pay Now" पर क्लिक करें और फिर अपना पेमेंट एप्प चुनें, जैसे PhonePe, GPay, Paytm आदि।</p>
+        </div>
+    </div>
+
+    <script>
+        function payNow() {
+            const upiId = 'Pumptripathi@okaxis'; // Replace with your UPI ID
+            const amount = ''; // Replace with your transaction amount
+            const note = 'सामान के लिए भुगतान'; // Replace with your transaction note
+            const name = 'आपका नाम'; // Replace with your name
+            const currency = 'INR'; // Replace with your currency code (e.g., INR)
+
+            const paymentUrl = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(name)}&am=${encodeURIComponent(amount)}&tn=${encodeURIComponent(note)}&cu=${encodeURIComponent(currency)}`;
+
+            // Redirect to UPI payment app
+            window.location.href = paymentUrl;
+        }
+    </script>
+</body>
+</html>
+
         img {
             max-width: 100%;
             height: auto;
