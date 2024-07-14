@@ -54,22 +54,4 @@
         <button class="btn-pay" onclick="payNow()">Pay Now</button>
         <div class="payment-instructions">
             <p>भुगतान करने के लिए "Pay Now" पर क्लिक करें और फिर अपना पेमेंट एप्प चुनें, जैसे PhonePe, GPay, Paytm आदि।</p>
-        </div>
-    </div>
-
-    <script>
-        function payNow() {
-            const upiId = 'Pumptripathi@okaxis'; // Replace with your UPI ID
-            const amount = ''; // Replace with your transaction amount
-            const note = ''; // Replace with your transaction note
-            const name = 'आपका नाम'; // Replace with your name
-            const currency = 'INR'; // Replace with your currency code (e.g., INR)
-
-            const paymentUrl = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(name)}&am=${encodeURIComponent(amount)}&tn=${encodeURIComponent(note)}&cu=${encodeURIComponent(currency)}`;
-
-            // Redirect to UPI payment app
-            window.location.href = paymentUrl;
-        }
-    </script>
-</body>
-</html>
+     
