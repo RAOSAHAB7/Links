@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI Payment Link Maker</title>
+    <title>UPI Payment Link Generator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Add CSS for styling -->
 </head>
 <body>
-    <h1>UPI Payment Link Maker</h1>
+    <h1>UPI Payment Link Generator</h1>
     <form id="upiForm">
         <label for="upiId">UPI ID:</label>
         <input type="text" id="upiId" name="upiId" required>
@@ -18,21 +19,6 @@
     </form>
     <p id="upiLink"></p>
 
-    <script>
-        document.getElementById('upiForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const upiId = document.getElementById('upiId').value;
-            const note = document.getElementById('note').value;
-
-            const response = await fetch('/generate-link', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ upiId, note })
-            });
-
-            const data = await response.json();
-            document.getElementById('upiLink').innerText = data.link;
-        });
-    </script>
-
-</body></html>
+    <script src="script.js"></script> <!-- Optional: Include JavaScript file -->
+</body>
+</html>
