@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI Payment Link Generator</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: Add CSS for styling -->
+    <title>UPI QR Payment</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
 </head>
 <body>
-    <h1>UPI Payment Link Generator</h1>
-    <form id="upiForm">
-        <label for="upiId">UPI ID:</label>
-        <input type="text" id="upiId" name="upiId" required>
-        <br>
-        <label for="note">Note:</label>
-        <input type="text" id="note" name="note">
-        <br>
-        <button type="submit">Generate Link</button>
-    </form>
-    <p id="upiLink"></p>
+    <div class="container">
+        <h1>UPI QR Payment</h1>
+        
+        <!-- QR Code image -->
+        <img src="your-upi-qr-code-url" alt="UPI QR Code" class="qr-code">
+        
+        <!-- Pay Now button -->
+        <button id="payButton">Pay Now</button>
+    </div>
 
-    <script src="script.js"></script> <!-- Optional: Include JavaScript file -->
+    <script src="script.js"></script> <!-- Optional: Link to JavaScript file -->
 </body>
 </html>
